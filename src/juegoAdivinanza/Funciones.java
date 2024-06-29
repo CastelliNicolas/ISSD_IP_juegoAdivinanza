@@ -22,7 +22,7 @@ public class Funciones {
 		Formato.imprimirSepMen();
 		System.out.println("INTENTO " + cont);
 		// Ingresar el valor que cree sea el aleatorio generado
-		nroJug = Validaciones.validarInt(scanner, "Ingrese un numero: ");
+		nroJug = Validaciones.validarInt(scanner, "Ingrese un número: ");
 		scanner.nextLine();
 		// Metodo medirProx 
 		Funciones.medirProx(nroRan, nroJug);
@@ -33,7 +33,7 @@ public class Funciones {
 		} while (nroJug != nroRan && intentos > 0); // WHILE controla si el numero coincide con el aleatorio o si se acabaron los intentos
 		Formato.imprimirSepMen();
 		// Mostrar al jugador el numero que se habia generado y que debia adivinar
-		System.out.println("El numero era: " + nroRan + "\n");
+		System.out.println("El número era: " + nroRan + "\n");
 		// Condicion si gana o pierde el jugador imprimir por consola el correspondiente desenlace
 		if (nroJug == nroRan) {
 			System.out.println("FELICIDADES! HAS GANADO. 🏆");			
@@ -48,19 +48,19 @@ public class Funciones {
 		String msg = "";
 		// En caso que el numero del jugador sea mayor al aleatorio
 		if(nroRan < nroJug) {
-			msg = "Tu numero esta por encima. 🔺";
+			msg = "Tu número es demasiado alto. 🔺";
 		}
 		// En caso que el numero del jugador sea menor al aleatorio
 		else if(nroRan > nroJug){
-			msg = "Tu numero esta por debajo. 🔻";
+			msg = "Tu número es demasiado bajo. 🔻";
 		}
 		// // En caso que el numero del jugador sea igual al aleatorio
 		else {
-			msg = "Tu numero es correcto. ✔";
+			msg = "Tu número es correcto. ✔";
 		}
 		// En caso de que el jugador se encuentre a solo +- 1 del numero aleatorio
 		if (nroJug + 1 == nroRan || nroJug - 1 == nroRan) {
-			msg += " \nTu numero esta MUY cerca. 🔥🔥🔥";
+			msg += " \nTu número esta MUY cerca. 🔥🔥🔥";
 		}
 		// Mostrar por consola el msg resultado para el jugador
 		System.out.println(msg);
