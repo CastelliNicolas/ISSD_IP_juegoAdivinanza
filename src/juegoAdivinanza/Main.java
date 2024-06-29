@@ -15,14 +15,14 @@ public class Main {
 		// Ciclo DOWHILE para el funcionamiento del menu de dificultad
 		do {
 			// Opciones de dificultad mostradas por consola
-			System.out.println("Menú de dificultades");
+			System.out.println("Menú de juego");
 			System.out.println("1. Fácil (1-50, 10 intentos)");
 			System.out.println("2. Medio (1-100, 7 intentos)");
 			System.out.println("3. Difícil (1-200, 5 intentos) ");
 			System.out.println("4. Personalizada (crea tu desafio)");
-			System.out.println("5. Salir \n");
+			System.out.println("5. Cerrar el juego \n");
 			// Ingresar la dificultad elegida por consola
-			op = Validaciones.validarInt(scanner, "Ingrese la dificultad: ");
+			op = Validaciones.validarInt(scanner, "Ingrese la opcion de juego: ");
 			scanner.nextLine();
 			// estructura SWITCH para las diferentes dificultades 
 			switch (op){

@@ -7,9 +7,11 @@ public class Funciones {
 	private Random random = new Random();
 	// Metodo adivinarNumero se ocupa de la totalidad del juego de adivinar un numero aleatorio en X intentos
 	public void adivinarNumero(int max, int min, int intentos ,Scanner scanner) {
+		int CANT_Int = intentos;
 		// Validar que el rango donde se va a elegir el numero aleatorio no sea invalido
 		if(max <= min) {
-			System.out.print("El rango no es valido.");
+			Formato.imprimirSepMen();
+			System.out.print("El rango no es valido. ⚠\n");
 			return;
 		}
 		// Crear numero aleatorio
@@ -20,7 +22,7 @@ public class Funciones {
 		int cont = 1;
 		do {
 		Formato.imprimirSepMen();
-		System.out.println("INTENTO " + cont);
+		System.out.println("INTENTO " + cont + "/" + CANT_Int);
 		// Ingresar el valor que cree sea el aleatorio generado
 		nroJug = Validaciones.validarInt(scanner, "Ingrese un número: ");
 		scanner.nextLine();
