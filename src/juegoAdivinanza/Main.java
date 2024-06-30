@@ -12,6 +12,12 @@ public class Main {
 		// Crear variables
 		int op;
 		int min = 1;
+		// Presentar el juego por consola
+		Formato.imprimirSep();
+		System.out.println("-------------JUEGO DE ADIVINANZA 1.0-------------");
+		System.out.println("Adivina el numero aleatorio. Tienes una cantidad\nlimitada de intentos para intentarlo. "
+				+ "Puedes elegir \nla dificultad que prefieras.\n" +"\nBuena suerte. 👍");
+		Formato.imprimirSep();
 		// Ciclo DOWHILE para el funcionamiento del menu de dificultad
 		do {
 			// Opciones de dificultad mostradas por consola
@@ -22,13 +28,14 @@ public class Main {
 			System.out.println("4. Personalizada (crea tu desafio)");
 			System.out.println("5. Cerrar el juego \n");
 			// Ingresar la dificultad elegida por consola
-			op = Validaciones.validarInt(scanner, "Ingrese la opcion de juego: ");
+			op = Validaciones.validarInt(scanner, "Ingrese la opción de juego: ");
 			scanner.nextLine();
 			// estructura SWITCH para las diferentes dificultades 
 			switch (op){
 				// Modo Facil 
 				case 1:
 					Formato.imprimirSep();
+					System.out.print("MODO FACIL | ");
 					// Setteo del modo facil en un rango de 50 - 1, con 10 intentos.
 					func.adivinarNumero(50, min, 10, scanner);
 					Formato.imprimirSep();
@@ -36,6 +43,7 @@ public class Main {
 				// Modo Intermedio
 				case 2:
 					Formato.imprimirSep();
+					System.out.print("MODO INTERMEDIO | ");
 					// Setteo del modo intermedio en un rango de 100 - 1, con 7 intentos.
 					func.adivinarNumero(100, min, 7, scanner);
 					Formato.imprimirSep();
@@ -43,6 +51,7 @@ public class Main {
 				// Modo Dificil
 				case 3:
 					Formato.imprimirSep();
+					System.out.print("MODO DIFICIL | ");
 					// Setteo del modo dificil en un rango de 200 - 1, con 5 intentos.
 					func.adivinarNumero(200, min, 5, scanner);
 					Formato.imprimirSep();
@@ -58,11 +67,20 @@ public class Main {
 					Formato.imprimirSepMen();
 					// Ingresar la cantidad de intentos con la que se desea jugar
 					int customTry = Validaciones.validarInt(scanner, "Ingresa el numero de intentos: ");
+					Formato.imprimirSep();
+					System.out.print("MODO PERSONALIZADO | ");
 					// Con todas las opciones setteadas se crea el modo configurado por consola
 					func.adivinarNumero(customMax, customMin, customTry, scanner);
 					Formato.imprimirSep();
+					break;
+				default:
+					Formato.imprimirSepMen();
+					System.out.println("Opción invalida. ⚠");
+					Formato.imprimirSepMen();
+					break;
 			}
 		} while (op != 5); // Ingresar el valor 5 terminara el programa
+		System.out.print("Saliendo... Gracias por jugar! 😁");
 		scanner.close(); // Cierre de scanner
 	}
 }
